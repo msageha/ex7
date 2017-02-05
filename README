@@ -1,0 +1,37 @@
+これは何？
+=========
+
+東北大学工学部電気系実験C-7のファイル（C言語）．
+
+ファイル構成
+-------------
+
+  * `echo`    単純なエコーサーバの実装
+  * `reversi` 一人用のリバーシプログラム
+
+それぞれの説明はそれぞれのディレクトリの中を参照
+
+
+ヒント
+------
+
+ * `man`を使おう（例：`man 2 socket`，`man 3 getaddrinfo`）
+ * エラーコードをチェックしよう（`errno`変数の値）
+ * `reversi`以下のほとんどのコードは変更する必要はない 
+ 
+
+おすすめ文献など
+----------------
+
+  * W.Richard Stevens著．橘 康雄，井上 尚司訳．
+   「詳解TCP/IP〈Vol.1〉プロトコル」，ピアソンエデュケーション．
+  * [Programming UNIX Sockets in C - Frequently Asked Questions]
+    (http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq.html)
+  * `man 2 socket`
+  * `man 2 accept`
+  * `man 2 bind`
+  * `man 2 listen`
+  * `man 2 connect`
+  * `man 2 send`
+  * `man 2 recv` 
+

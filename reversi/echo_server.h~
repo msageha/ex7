@@ -1,0 +1,8 @@
+#ifndef __JIKKEN_C_REVERSI_GAME__
+#define __JIKKEN_C_REVERSI_GAME__
+
+#include "player.h"
+int montecarlo(const board_t* board, const color_t color, struct move_t* mp, void* state);
+
+
+#endif

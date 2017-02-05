@@ -1,0 +1,39 @@
+これは何？
+==========
+
+実験7の課題のリバーシ対戦プログラム．対戦相手はランダムプレイヤーまたは、リモートサーバーにつなげることもできる。
+また、簡易的なモンテカルロ木探索を利用した、リバーシ対戦AIサーバーの実装もした。
+サーバー側のAIには、モンテカルロ木探索のものか、ランダムで手を返すものどちらかを指定できる。
+
+ファイル
+--------
+
+  * `debug.h`               デバッグ用関数
+  * `color.h`, `color.c`    各マスの石（白，黒，石なし）
+  * `board.h`, `board.c`    盤面および盤面の操作
+  * `player.h`, `player.c`  ランダム，人間などのプレイヤーの実装
+                            （このあたりを主にいじる）
+  * `game.h`, `game.c`      リバーシの1ゲームを実装
+  * `single_play.c`         一人用モードの実装
+  *  `echo_server.c`        サーバー用の実装
+
+ビルド
+------
+
+    make all
+
+すると，`single_play`という実行形式と、`echo_server`という実行形式が作成される．
+$./single_play random
+と、実行すると、ランダムで手を返すAIとローカルで対戦できる。
+$./single_play remote HOSTNAME PORT
+と、することでポート番号PORTで待ち受けた、HOSTNAMEサーバに接続する。
+
+また、
+$./echo_server AI_NAME PORT
+とすると、ポート番号PORTでまちうけるlocalhostサーバが起動する。
+AI_NAMEには、'montecarlo'または'random'を指定できる。
+
+また，
+    make doc
+とすると，ドキュメンテーションが，`./doc/html/index.html`に作成される．
+

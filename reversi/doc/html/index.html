@@ -1,0 +1,114 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Jikken C Reversi: メインページ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.6.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <img id="MSearchSelect" src="search/search.png"
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"
+             alt=""/>
+        <input type="text" id="MSearchField" value="検索" accesskey="S"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Jikken C Reversi ドキュメント</h1><p>一人用リバーシの実装．</p>
+<h2><a class="anchor" id="使い方">
+使い方</a></h2>
+<p>引数なしで<code>single_play</code> を起動すると，ランダムプレイヤーと対戦できる． </p>
+<div class="fragment"><pre class="fragment">
+$ ./single_play 
+</pre></div><p> 上記を入力すると，以下が表示される．`BLACK&gt;`はあなたが黒であることを表している． </p>
+<div class="fragment"><pre class="fragment">
+Game start.
+ |A B C D E F G H
+-+----------------
+1|- - - - - - - -
+2|- - - - - - - -
+3|- - - . - - - -
+4|- - . O X - - -
+5|- - - X O . - -
+6|- - - - . - - -
+7|- - - - - - - -
+8|- - - - - - - -
+Black: 2
+White: 2
+BLACK&gt;
+</pre></div><p> ここで，「`.`」で表されているのが着手可能な場所である．手を入力するには石を置く座標を入力する．たとえば「`F5`」と入力すると相手は適当に場所に打ち，またプレイヤーの手番となる． </p>
+<div class="fragment"><pre class="fragment">
+...
+BLACK&gt; F5
+ |A B C D E F G H
+-+----------------
+1|- - - - - - - -
+2|- - - - - - - -
+3|- - . . . . . -
+4|- - - O O O - -
+5|- - - X X X - -
+6|- - - - - - - -
+7|- - - - - - - -
+8|- - - - - - - -
+Black: 3
+White: 3
+BLACK&gt;
+</pre></div><p> これを繰り返し，ゲームが進んでいく．途中でやめるには`CTRL+D`を入力する．</p>
+<p>また，以下のように`-r`オプションを付けて起動すると，ランダムプレイヤー同士の対戦ができる． </p>
+<div class="fragment"><pre class="fragment">
+$ ./single_play -r
+</pre></div><h2><a class="anchor" id="ファイル構成">
+ファイル構成</a></h2>
+<p>上の「ファイル」も参考にせよ．</p>
+<ul>
+<li>`color.h`，`color.c` 石の色あるいは手番を実装． </li>
+<li>`board.h`，`board.c` 盤面のデータおよび操作（合法手の判定や石をひっくり返す処理）を実装． </li>
+<li>`player.h`，`player.c` 抽象化されたプレイヤー（人，ランダム等）を実装．`player_t` 構造体の理解は実験の遂行において重要． </li>
+<li>`game.h`，`game.c` プレイヤー同士のリバーシの対戦を実装． </li>
+<li>`debug.h` デバッグ用マクロを提供． </li>
+<li>`single_play.c` このプログラムのmain関数を定義．</li>
+</ul>
+<p>実験の遂行にあたっては上記のファイルは書き換える必要はない．別のファイルに関数を実装していけばよいだろう． </p>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr size="1"/><address style="text-align: right;"><small>Jikken C Reversiに対して13 Jan 2017に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

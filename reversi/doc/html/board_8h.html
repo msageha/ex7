@@ -1,0 +1,641 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Jikken C Reversi: board.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.6.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <img id="MSearchSelect" src="search/search.png"
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"
+             alt=""/>
+        <input type="text" id="MSearchField" value="検索" accesskey="S"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>board.h</h1>
+<p>リバーシの盤面とその操作．  
+<a href="#_details">[詳細]</a></p>
+<code>#include &quot;<a class="el" href="color_8h_source.html">color.h</a>&quot;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
+
+<p><a href="board_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>データ構造</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmove__t.html">move_t</a></td></tr>
+<tr><td colspan="2"><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a></td></tr>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmove__t.html">move_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a6b59de94424052e51866b06acd153d33">make_move</a> (const int i, const int j)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmove__t.html">move_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a7334df73d2399f26c12257c922da2605">passed</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a7db5311f49eb4517015083fdfb40a569">write_move</a> (const struct <a class="el" href="structmove__t.html">move_t</a> mv, char *buf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#af8995f84b7918e33ba0017971a9d4421">read_move</a> (const char *buf, struct <a class="el" href="structmove__t.html">move_t</a> *mv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a0fde2b37531366159d7c80d115c2374b">color_at</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const int i, const int j)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#aeb09d05629681eb2dc76ca590350f315">create_board</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a324e7ff124fa256d1135a1570cae23da">destruct_board</a> (<a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a54ab5aeeae3aa4acd25e020ebd5ab1af">is_legal_move</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, const struct <a class="el" href="structmove__t.html">move_t</a> mv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#ad2b537181f964c0c5a7aa7aeda938e20">legal_moves</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, struct <a class="el" href="structmove__t.html">move_t</a> *moves, int *len)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a547acfceb98b6d8a0746e9536ae7d31f">is_playable</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#aad5cf1ae5e3ce589587d5bf5d44d9aad">is_end_game</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a80205c372dfe1f339939774d786105c6">write_board</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, char *buf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a5293b1fc792a7da154e4c2b267614a4a">read_board</a> (const char *buf, <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a07321e6780d39be4290e518a294eafd0">do_move</a> (<a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, const struct <a class="el" href="structmove__t.html">move_t</a> mv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a185941a37e1c3fb3efced1cf41673ccc">print_board</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html#a1adb48820bc5253230fd2c12c8054f03">print_board_with_legal_moves</a> (const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>リバーシの盤面とその操作． </p>
+<p>盤面や手の処理の他に，このファイルは <a class="el" href="board_8h.html#a80205c372dfe1f339939774d786105c6">write_board()</a>, <a class="el" href="board_8h.html#a5293b1fc792a7da154e4c2b267614a4a">read_board()</a>, <a class="el" href="board_8h.html#a7db5311f49eb4517015083fdfb40a569">write_move()</a> 及び <a class="el" href="board_8h.html#af8995f84b7918e33ba0017971a9d4421">read_move()</a> という関数も提供する． これらは，盤面や手をシリアライズするために用意されている． </p>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="a0b466c65625b463d1a9b3c7139da155d"></a><!-- doxytag: member="board.h::board_t" ref="a0b466c65625b463d1a9b3c7139da155d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>型 board_t は color_t の別名である. ただし，我々は常に board_t* を100（10×10）要素の color_t の配列を指すポインタの型として使用する． </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a0fde2b37531366159d7c80d115c2374b"></a><!-- doxytag: member="board.h::color_at" ref="a0fde2b37531366159d7c80d115c2374b" args="(const board_t *board, const int i, const int j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color_at </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>与えられた場所にある石の色を返す．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>i</em>&nbsp;</td><td>行インデックス </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>j</em>&nbsp;</td><td>列インデックス </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb09d05629681eb2dc76ca590350f315"></a><!-- doxytag: member="board.h::create_board" ref="aeb09d05629681eb2dc76ca590350f315" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a>* create_board </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>リバーシの盤面を作成する. 盤面は必ず <a class="el" href="board_8h.html#a324e7ff124fa256d1135a1570cae23da">destruct_board()</a> により解放されなければならない. </p>
+
+</div>
+</div>
+<a class="anchor" id="a324e7ff124fa256d1135a1570cae23da"></a><!-- doxytag: member="board.h::destruct_board" ref="a324e7ff124fa256d1135a1570cae23da" args="(board_t *board)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destruct_board </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>リバーシの盤面を破棄する </p>
+
+</div>
+</div>
+<a class="anchor" id="a07321e6780d39be4290e518a294eafd0"></a><!-- doxytag: member="board.h::do_move" ref="a07321e6780d39be4290e518a294eafd0" args="(board_t *board, const color_t color, const struct move_t mv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int do_move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structmove__t.html">move_t</a>&nbsp;</td>
+          <td class="paramname"> <em>mv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>実際に着手する．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>着手する前および後の盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>着手する石の色 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>mv</em>&nbsp;</td><td>着手する手</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>成功時は0，そうでなければ -1 を返す． </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aad5cf1ae5e3ce589587d5bf5d44d9aad"></a><!-- doxytag: member="board.h::is_end_game" ref="aad5cf1ae5e3ce589587d5bf5d44d9aad" args="(const board_t *board)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_end_game </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>与えられた盤面が終局しているかどうか, つまりいずれのプレイヤーにとっても着手可能でないことを判定する</p>
+<p>式 </p>
+<div class="fragment"><pre class="fragment">    is_end_game( board ) 
+</pre></div><p> は以下の式と等価である． </p>
+<div class="fragment"><pre class="fragment">   is_playable( board, <a class="code" href="color_8h.html#ab9603241fc663c675ced09f5c8db9348">WHITE</a> ) &amp;&amp; is_playable( board, <a class="code" href="color_8h.html#a3bda73fa07c217d6f76a044e04355c90">BLACK</a> )
+</pre></div><dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>盤面 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>終局しているかどうか </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a54ab5aeeae3aa4acd25e020ebd5ab1af"></a><!-- doxytag: member="board.h::is_legal_move" ref="a54ab5aeeae3aa4acd25e020ebd5ab1af" args="(const board_t *board, const color_t color, const struct move_t mv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_legal_move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structmove__t.html">move_t</a>&nbsp;</td>
+          <td class="paramname"> <em>mv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>与えられた盤面 <code>board</code> と手番 <code>color</code> において, 手 <code>mv</code> が合法か否かを判定する．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>着手する盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>手番の色 (<a class="el" href="color_8h.html#ab9603241fc663c675ced09f5c8db9348">WHITE</a> or <a class="el" href="color_8h.html#a3bda73fa07c217d6f76a044e04355c90">BLACK</a>) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>mv</em>&nbsp;</td><td>手</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>合法手か否か </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a547acfceb98b6d8a0746e9536ae7d31f"></a><!-- doxytag: member="board.h::is_playable" ref="a547acfceb98b6d8a0746e9536ae7d31f" args="(const board_t *board, const color_t color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_playable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>与えられた盤面と手番において，着手可能な手が存在するかどうかを判定</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>手番の色 (<a class="el" href="color_8h.html#ab9603241fc663c675ced09f5c8db9348">WHITE</a> or <a class="el" href="color_8h.html#a3bda73fa07c217d6f76a044e04355c90">BLACK</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2b537181f964c0c5a7aa7aeda938e20"></a><!-- doxytag: member="board.h::legal_moves" ref="ad2b537181f964c0c5a7aa7aeda938e20" args="(const board_t *board, const color_t color, struct move_t *moves, int *len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void legal_moves </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmove__t.html">move_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>moves</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>与えられた盤面 <code>board</code> と手番 <code>color</code> における全ての合法手を計算する．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>着手する盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>手番の色 (<a class="el" href="color_8h.html#ab9603241fc663c675ced09f5c8db9348">WHITE</a> or <a class="el" href="color_8h.html#a3bda73fa07c217d6f76a044e04355c90">BLACK</a>) </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>moves</em>&nbsp;</td><td>求められた手が書き込まれる配列へのポインタ </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>len</em>&nbsp;</td><td>求めた合法手の数 (&lt;60). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b59de94424052e51866b06acd153d33"></a><!-- doxytag: member="board.h::make_move" ref="a6b59de94424052e51866b06acd153d33" args="(const int i, const int j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmove__t.html">move_t</a> make_move </td>
+          <td>(</td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>(i,j)へ石を置くことを表す <a class="el" href="structmove__t.html">move_t</a> 構造体を作成する． </p>
+
+</div>
+</div>
+<a class="anchor" id="a7334df73d2399f26c12257c922da2605"></a><!-- doxytag: member="board.h::passed" ref="a7334df73d2399f26c12257c922da2605" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmove__t.html">move_t</a> passed </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>パスを表す <a class="el" href="structmove__t.html">move_t</a> 構造体を作成する． </p>
+
+</div>
+</div>
+<a class="anchor" id="a185941a37e1c3fb3efced1cf41673ccc"></a><!-- doxytag: member="board.h::print_board" ref="a185941a37e1c3fb3efced1cf41673ccc" args="(const board_t *board)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_board </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>盤面を標準出力にプリントする．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>プリントする盤面 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1adb48820bc5253230fd2c12c8054f03"></a><!-- doxytag: member="board.h::print_board_with_legal_moves" ref="a1adb48820bc5253230fd2c12c8054f03" args="(const board_t *board, const color_t color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_board_with_legal_moves </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>盤面を合法手の情報付きで標準出力にプリントする．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>プリントする盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>手番の色 (<a class="el" href="color_8h.html#ab9603241fc663c675ced09f5c8db9348">WHITE</a> or <a class="el" href="color_8h.html#a3bda73fa07c217d6f76a044e04355c90">BLACK</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5293b1fc792a7da154e4c2b267614a4a"></a><!-- doxytag: member="board.h::read_board" ref="a5293b1fc792a7da154e4c2b267614a4a" args="(const char *buf, board_t *board)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_board </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>盤面をバイト列から読み出す．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>buf</em>&nbsp;</td><td>読み出し元のバッファ（少なくともbuf+64が有効でなければならない） </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>読み出した盤面を書き出すための有効なポインタ (NULLであってはならない). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>成功時は64を，そうでなければ0を返す． </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af8995f84b7918e33ba0017971a9d4421"></a><!-- doxytag: member="board.h::read_move" ref="af8995f84b7918e33ba0017971a9d4421" args="(const char *buf, struct move_t *mv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_move </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmove__t.html">move_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>mv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>バイト列から <a class="el" href="structmove__t.html">move_t</a> 構造体を読み出す．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>buf</em>&nbsp;</td><td>読み出し元のバッファへのポインタ </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>mv</em>&nbsp;</td><td><a class="el" href="structmove__t.html">move_t</a> 構造体へのポインタ（NULLではない） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>成功時は呼んだバイト数を, 失敗時は0を返す </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a80205c372dfe1f339939774d786105c6"></a><!-- doxytag: member="board.h::write_board" ref="a80205c372dfe1f339939774d786105c6" args="(const board_t *board, char *buf)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_board </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>buf</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>盤面をバイト列として書き出す．書き出されるのは常に64バイトである．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>書き出す盤面 </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>buf</em>&nbsp;</td><td>書き出し先のバッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7db5311f49eb4517015083fdfb40a569"></a><!-- doxytag: member="board.h::write_move" ref="a7db5311f49eb4517015083fdfb40a569" args="(const struct move_t mv, char *buf)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_move </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmove__t.html">move_t</a>&nbsp;</td>
+          <td class="paramname"> <em>mv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>buf</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="structmove__t.html">move_t</a> 構造体をバイト列に書き出す</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>mv</em>&nbsp;</td><td>書き出す手 </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>buf</em>&nbsp;</td><td>書き出し先のバッファへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr size="1"/><address style="text-align: right;"><small>Jikken C Reversiに対して13 Jan 2017に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

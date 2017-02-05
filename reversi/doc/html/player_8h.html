@@ -1,0 +1,254 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Jikken C Reversi: player.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.6.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <img id="MSearchSelect" src="search/search.png"
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"
+             alt=""/>
+        <input type="text" id="MSearchField" value="検索" accesskey="S"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>player.h</h1>
+<p>プレイヤーを表す型と幾つかのプレイヤーの実装  
+<a href="#_details">[詳細]</a></p>
+<code>#include &quot;<a class="el" href="color_8h_source.html">color.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="board_8h_source.html">board.h</a>&quot;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
+
+<p><a href="player_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>データ構造</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer__t.html">player_t</a></td></tr>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a97af61153ba1466ad9a442466b84aedc">destruct_player</a> (struct <a class="el" href="structplayer__t.html">player_t</a> *p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a37491a45c2ead8a745d77d1159008b11">play</a> (struct <a class="el" href="structplayer__t.html">player_t</a> *p, const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, struct <a class="el" href="structmove__t.html">move_t</a> *mp)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プレイヤーに次の手を聞く  <a href="#a37491a45c2ead8a745d77d1159008b11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#aaf7ed5930dfecb3cdc980f0df74df71c">make_human_player</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#ac4a42f5375f76e2cdf09bd2a0e13ef14">make_random_player</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a9b118671cdd1f0cd4e4988fa287ce99e">make_slow_random_player</a> (int wait)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">着手の遅いランダムプレイヤーを作成する．  <a href="#a9b118671cdd1f0cd4e4988fa287ce99e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a58868b543c68355ceb7e02bee112b276">make_replaying_random_player</a> (const char *filepath)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">保存された乱数列を元に「ランダムに」プレイするランダムプレイヤーを作成する  <a href="#a58868b543c68355ceb7e02bee112b276"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>プレイヤーを表す型と幾つかのプレイヤーの実装 </p>
+<p>このファイルは <a class="el" href="structplayer__t.html">player_t</a> 構造体を定義する. この構造体は，与えられた盤面と手番における手を返す, プレイヤーを表現する．プレイヤーはリバーシのロジックには関与しない. 盤面の操作やら合法手のチェックはプレイヤーの責任ではない.</p>
+<p>また，このファイルではいくつかのプレイヤーの実装を提供する. <a class="el" href="player_8h.html#ac4a42f5375f76e2cdf09bd2a0e13ef14">make_random_player()</a>は合法手をランダムに選択するランダムプレイヤーを作成する. <a class="el" href="player_8h.html#aaf7ed5930dfecb3cdc980f0df74df71c">make_human_player()</a>は打つべき手をインタラクティブにユーザに問い合わせるプレイヤーを作成する. <a class="el" href="player_8h.html#a9b118671cdd1f0cd4e4988fa287ce99e" title="着手の遅いランダムプレイヤーを作成する．">make_slow_random_player()</a>は着手の遅いランダムプレイヤーを作成する. この関数自体が有用なものというではなく, <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">player_t::_hidden_state</a> の使用例を示すためだけ実装されている. <a class="el" href="player_8h.html#a58868b543c68355ceb7e02bee112b276" title="保存された乱数列を元に「ランダムに」プレイするランダ�...">make_replaying_random_player()</a>もやはりランダムプレイヤーを作成するが乱数列をファイルから読みこむ. こちらも <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">player_t::_hidden_state</a> の使用例のひとつである. </p>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a97af61153ba1466ad9a442466b84aedc"></a><!-- doxytag: member="player.h::destruct_player" ref="a97af61153ba1466ad9a442466b84aedc" args="(struct player_t *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void destruct_player </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>プレイヤーの破棄 </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf7ed5930dfecb3cdc980f0df74df71c"></a><!-- doxytag: member="player.h::make_human_player" ref="aaf7ed5930dfecb3cdc980f0df74df71c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structplayer__t.html">player_t</a>* make_human_player </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>人間のプレイヤーを作成する．</p>
+<p>このプレイヤーは <a class="el" href="player_8h.html#a37491a45c2ead8a745d77d1159008b11" title="プレイヤーに次の手を聞く">play()</a> 時に標準入出力を通してユーザに手を問い合わせる. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac4a42f5375f76e2cdf09bd2a0e13ef14"></a><!-- doxytag: member="player.h::make_random_player" ref="ac4a42f5375f76e2cdf09bd2a0e13ef14" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structplayer__t.html">player_t</a>* make_random_player </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ランダムプレイヤーを作成する．</p>
+<p>このプレイヤーは <a class="el" href="player_8h.html#a37491a45c2ead8a745d77d1159008b11" title="プレイヤーに次の手を聞く">play()</a> 時にランダムに合法手を着手する． </p>
+
+</div>
+</div>
+<a class="anchor" id="a58868b543c68355ceb7e02bee112b276"></a><!-- doxytag: member="player.h::make_replaying_random_player" ref="a58868b543c68355ceb7e02bee112b276" args="(const char *filepath)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structplayer__t.html">player_t</a>* make_replaying_random_player </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>filepath</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>保存された乱数列を元に「ランダムに」プレイするランダムプレイヤーを作成する </p>
+<p>ファイルは十分に大きい必要があるが，<code>sizeof(int) * 64</code> bytes程度あれば十分である． <code>/dev/urandom</code> を使えば（Cの乱数を使うよりかはよい）ランダムプレイヤーになるかもしれない．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file</em>&nbsp;</td><td>ファイルへのパス </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b118671cdd1f0cd4e4988fa287ce99e"></a><!-- doxytag: member="player.h::make_slow_random_player" ref="a9b118671cdd1f0cd4e4988fa287ce99e" args="(int wait)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structplayer__t.html">player_t</a>* make_slow_random_player </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>wait</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [read]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>着手の遅いランダムプレイヤーを作成する． </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>wait</em>&nbsp;</td><td>着手の遅れ（マイクロ秒） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a37491a45c2ead8a745d77d1159008b11"></a><!-- doxytag: member="player.h::play" ref="a37491a45c2ead8a745d77d1159008b11" args="(struct player_t *p, const board_t *board, const color_t color, struct move_t *mp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int play </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structplayer__t.html">player_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a>&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmove__t.html">move_t</a> *&nbsp;</td>
+          <td class="paramname"> <em>mp</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プレイヤーに次の手を聞く </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>p</em>&nbsp;</td><td>プレイヤー </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>着手前の盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>着手時の手番の色 </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>mp</em>&nbsp;</td><td>プレイヤーが着手した手を格納するポインタ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>成功すれば0を，エラー時には負数を返す． </dd></dl>
+
+</div>
+</div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr size="1"/><address style="text-align: right;"><small>Jikken C Reversiに対して13 Jan 2017に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Jikken C Reversi: 構造体 player_t</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.6.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>データ構造</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <img id="MSearchSelect" src="search/search.png"
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"
+             alt=""/>
+        <input type="text" id="MSearchField" value="検索" accesskey="S"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li><a href="classes.html"><span>データ構造索引</span></a></li>
+      <li><a href="functions.html"><span>データフィールド</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>構造体 player_t</h1><!-- doxytag: class="player_t" -->
+<p><code>#include &lt;<a class="el" href="player_8h_source.html">player.h</a>&gt;</code></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">_hidden_state</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer__t.html#a08a226d5487551da4254c75e3aac5375">_play</a> )(const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, struct <a class="el" href="structmove__t.html">move_t</a> *mp, void *state)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer__t.html#afc59debcb38a13c1432d36f5e021eecf">_clean_up</a> )(void *state)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>プレイヤーを表す構造体． プレイヤーは与えられば盤面と手番に対しどの手を打つかを知っている.</p>
+<p>この型のフィールドに直接アクセスすることは推奨されない． </p>
+<hr/><h2>構造体</h2>
+<a class="anchor" id="afc59debcb38a13c1432d36f5e021eecf"></a><!-- doxytag: member="player_t::_clean_up" ref="afc59debcb38a13c1432d36f5e021eecf" args=")(void *state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* <a class="el" href="structplayer__t.html#afc59debcb38a13c1432d36f5e021eecf">player_t::_clean_up</a>)(void *state)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>このプレイヤーの確保したリソースの解放等を行うための 関数への関数ポインタ．</p>
+<p>もし，このプレイヤーの <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">_hidden_state</a> が malloc() されているなら, ユーザはこの関数ポインタを free() を指すようにすべきかもしれない．</p>
+<p>あるいは, <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">_hidden_state</a> の初期値を作成するのにその他のリソースを確保しているのならば, この関数ポインタをその解放を行う関数を指すようにすべきであろう．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>state</em>&nbsp;</td><td>このプレイヤーの <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">_hidden_state</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a246c053e38a3278b2eb47c402cc1179e"></a><!-- doxytag: member="player_t::_hidden_state" ref="a246c053e38a3278b2eb47c402cc1179e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">player_t::_hidden_state</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="structplayer__t.html#a08a226d5487551da4254c75e3aac5375">_play()</a> からアクセス可能なポインタ． <a class="el" href="structplayer__t.html#a08a226d5487551da4254c75e3aac5375">_play()</a> 時に参照したいデータを格納するのに用いる． </p>
+
+</div>
+</div>
+<a class="anchor" id="a08a226d5487551da4254c75e3aac5375"></a><!-- doxytag: member="player_t::_play" ref="a08a226d5487551da4254c75e3aac5375" args=")(const board_t *board, const color_t color, struct move_t *mp, void *state)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structplayer__t.html#a08a226d5487551da4254c75e3aac5375">player_t::_play</a>)(const <a class="el" href="board_8h.html#a0b466c65625b463d1a9b3c7139da155d">board_t</a> *board, const <a class="el" href="color_8h.html#af00bd69e44901f206becdb8e7cf0ff27">color_t</a> color, struct <a class="el" href="structmove__t.html">move_t</a> *mp, void *state)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>実際に手を指す関数への関数ポインタ．</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>board</em>&nbsp;</td><td>着手前の盤面 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>color</em>&nbsp;</td><td>手番の色 </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>mp</em>&nbsp;</td><td>着手した手を格納するためのポインタ </td></tr>
+    <tr><td valign="top"><tt>[in,out]</tt>&nbsp;</td><td valign="top"><em>state</em>&nbsp;</td><td>このプレイヤーの <a class="el" href="structplayer__t.html#a246c053e38a3278b2eb47c402cc1179e">_hidden_state</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>成功すれば0，失敗すれば負数 </dd></dl>
+
+</div>
+</div>
+<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<li><a class="el" href="player_8h_source.html">player.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr size="1"/><address style="text-align: right;"><small>Jikken C Reversiに対して13 Jan 2017に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>
